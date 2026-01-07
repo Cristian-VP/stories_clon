@@ -1,72 +1,3 @@
----
-name: fase2-estado-global-persistencia-completo
-overview: Plan completo para implementar StoriesContext con React Context API, incluyendo explicaciones conceptuales, estructura detallada del Provider, persistencia en localStorage, y filtrado automático de stories expiradas.
-todos:
-  - id: fase2-imports-types
-    content: "Añadir imports necesarios: createContext, useContext, useState, useEffect, ReactNode, Story, compressImageToBase64."
-    status: pending
-  - id: fase2-interface-context-value
-    content: "Definir interface StoriesContextValue con stories, addStory(file: File), y removeStory opcional."
-    status: pending
-    dependencies:
-      - fase2-imports-types
-  - id: fase2-create-context-object
-    content: Crear StoriesContext con createContext<StoriesContextValue | undefined>(undefined).
-    status: pending
-    dependencies:
-      - fase2-interface-context-value
-  - id: fase2-funciones-localStorage
-    content: Implementar loadStoriesFromLocalStorage() y saveStoriesToLocalStorage() con manejo de errores (try/catch).
-    status: pending
-  - id: fase2-estado-provider
-    content: Crear estado stories con useState<Story[]>([]) dentro del StoriesProvider.
-    status: pending
-    dependencies:
-      - fase2-create-context-object
-  - id: fase2-addStory-implementacion
-    content: "Implementar addStory(file: File) que llame a compressImageToBase64, cree Story con crypto.randomUUID(), y actualice el estado."
-    status: pending
-    dependencies:
-      - fase2-estado-provider
-      - fase2-funciones-localStorage
-  - id: fase2-removeStory-implementacion
-    content: "Implementar removeStory(id: string) que filtre el array excluyendo la story con ese id (opcional para Fase 2)."
-    status: pending
-    dependencies:
-      - fase2-estado-provider
-  - id: fase2-useeffect-carga-inicial
-    content: Implementar useEffect con dependencias [] para cargar desde localStorage, filtrar stories >24h, y establecer estado inicial.
-    status: pending
-    dependencies:
-      - fase2-funciones-localStorage
-      - fase2-estado-provider
-  - id: fase2-useeffect-guardado-automatico
-    content: Implementar useEffect con dependencias [stories] para guardar automáticamente en localStorage cada vez que cambie stories.
-    status: pending
-    dependencies:
-      - fase2-funciones-localStorage
-      - fase2-estado-provider
-  - id: fase2-provider-component
-    content: Crear StoriesProvider component que retorne StoriesContext.Provider con value conteniendo stories, addStory, removeStory.
-    status: pending
-    dependencies:
-      - fase2-addStory-implementacion
-      - fase2-removeStory-implementacion
-      - fase2-useeffect-carga-inicial
-      - fase2-useeffect-guardado-automatico
-  - id: fase2-custom-hook-usestories
-    content: Crear custom hook useStories() que use useContext, verifique que el contexto existe, y retorne el contexto o lance error.
-    status: pending
-    dependencies:
-      - fase2-create-context-object
-  - id: fase2-pruebas-integracion
-    content: Probar carga inicial, añadir stories, verificar persistencia al recargar, y verificar filtrado de stories expiradas.
-    status: pending
-    dependencies:
-      - fase2-provider-component
-      - fase2-custom-hook-usestories
----
-
 # Plan Fase 2 – Estado Global y Persistencia (Com
 
 pleto)
@@ -216,16 +147,10 @@ const [stories, setStories] = useState<Story[]>([]);
                };
    ```
 
-
-
-
 4. **Añade al estado:**
    ```typescript
                setStories(prevStories => [...prevStories, newStory]);
    ```
-
-
-
 
 5. **Persistencia:** El `useEffect` con dependencia `[stories]` guardará automáticamente en `localStorage`.
 
@@ -502,8 +427,6 @@ flowchart TD
 const id = crypto.randomUUID(); // Ejemplo: "550e8400-e29b-41d4-a716-446655440000"
 ```
 
-
-
 - **Ventajas:** Estándar del navegador, muy único, sin dependencias.
 - **Desventajas:** Requiere navegadores modernos (Chrome 92+, Firefox 95+, Safari 15.4+).
 - **Compatibilidad:** Suficiente para proyectos modernos.
@@ -514,8 +437,6 @@ const id = crypto.randomUUID(); // Ejemplo: "550e8400-e29b-41d4-a716-44665544000
 const id = Date.now().toString(); // Ejemplo: "1704567890123"
 ```
 
-
-
 - **Ventajas:** Funciona en todos los navegadores, muy simple.
 - **Desventajas:** Menos único (dos uploads simultáneos podrían tener el mismo ID).
 
@@ -524,8 +445,6 @@ const id = Date.now().toString(); // Ejemplo: "1704567890123"
 ```typescript
 const id = `${Date.now()}-${Math.random().toString(36).substring(2, 9)}`;
 ```
-
-
 
 - **Ventajas:** Balance entre unicidad y compatibilidad.
 - **Desventajas:** Más código.
