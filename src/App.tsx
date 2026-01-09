@@ -107,20 +107,6 @@ function App() {
                 </div>
             )}
 
-            {/* Instructions */}
-            {stories.length > 0 && (
-                <div className="max-w-md mx-auto px-4 py-6">
-                    <div className="bg-gray-50 rounded-lg p-4 text-sm text-gray-600">
-                        <p className="font-semibold text-gray-900 mb-2">💡 Instrucciones:</p>
-                        <ul className="space-y-1">
-                            <li>• Click en <strong>+</strong> arriba para crear una nueva story</li>
-                            <li>• Click en el <strong>+ pequeño</strong> del círculo para agregar más imágenes a esa story</li>
-                            <li>• Click en un círculo para ver la story completa</li>
-                        </ul>
-                    </div>
-                </div>
-            )}
-
             {/* Story Viewer Modal */}
             <StoryViewer />
         </div>
