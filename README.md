@@ -2,6 +2,8 @@
 
 Proyecto educativo que replica el flujo de Instagram Stories empleando React 19, TypeScript, Vite y Tailwind CSS. Incluye compresión ligera de imágenes, almacenamiento local y controles táctiles para avanzar, retroceder o pausar.
 
+## <u>[Ver en GitHub Pages](https://cristian-vp.github.io/stories_clon/)</u>
+
 ## Demo Desktop
 
 <video src="./media/desktop.mp4" controls width="720" preload="metadata">
