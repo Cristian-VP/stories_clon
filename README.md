@@ -2,9 +2,15 @@
 
 Proyecto educativo que replica el flujo de Instagram Stories empleando React 19, TypeScript, Vite y Tailwind CSS. Incluye compresión ligera de imágenes, almacenamiento local y controles táctiles para avanzar, retroceder o pausar.
 
-## Demo 
+## Demo Desktop
 
-<video src="./media/demo.mp4" controls width="720" preload="metadata">
+<video src="./media/desktop.mp4" controls width="720" preload="metadata">
+  Tu navegador no soporta la reproducción de video embebido.
+</video>  
+
+## Demo móvil
+
+<video src="./media/mobil.mp4" controls width="720" preload="metadata">
   Tu navegador no soporta la reproducción de video embebido.
 </video>
 
