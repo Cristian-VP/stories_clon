@@ -71,4 +71,8 @@ npm run deploy  # si tienes script; si no, sube `dist/` al branch gh-pages
 
 4. En GitHub, habilita Pages apuntando a la rama y carpeta `gh-pages`/`/` (o `docs/` según tu flujo).
 
+- Base en `vite.config.ts` ya configurada: `base: '/stories_clon/'`.
+- Si usas GitHub Actions, el flujo `/.github/workflows/deploy.yml` build + deploya a Pages automáticamente desde `main` a la rama interna de Pages.
+- Alternativa: instala `gh-pages` (`npm i -D gh-pages`) y usa los scripts `predeploy`/`deploy` añadidos en `package.json` para publicar `dist/`.
+
 Asegúrate de hacer commit de `dist/` solo si usas Pages desde `/docs`; de lo contrario, usa una rama de despliegue o una acción de CI que copie `dist/` a `gh-pages`.
