@@ -1,42 +1,33 @@
 #root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+  width: 100%;
+  min-height: 100vh;
+  background-color: #ffffff;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #61dafbee);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
-}
-
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
+/* Prevenir zoom no deseado en inputs */
+@media (max-width: 640px) {
+  input[type="file"],
+  input[type="text"],
+  textarea,
+  select {
+    font-size: 16px;
   }
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
+/* Soporte para pantallas pequeñas */
+@media (max-width: 480px) {
+  body {
+    font-size: 14px;
   }
 }
 
-.card {
-  padding: 2em;
+/* Scroll suave */
+html {
+  scroll-behavior: smooth;
 }
 
-.read-the-docs {
-  color: #888;
+/* Asegurar que los elementos fullscreen sean responsive */
+.fixed {
+  position: fixed;
+  width: 100%;
 }
