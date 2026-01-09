@@ -6,11 +6,11 @@ Proyecto educativo que replica el flujo de Instagram Stories empleando React 19,
 
 ## Demo Desktop
 
-![Demo Desktop](https://raw.githubusercontent.com/cifpfbmoll/05-clon-stories-de-instagram-Cristian-VP/main/media/desktop.gif)
+Consultar en media/
 
 ## Demo móvil
 
-![Demo Móvil](https://raw.githubusercontent.com/cifpfbmoll/05-clon-stories-de-instagram-Cristian-VP/main/media/mobil.gif)
+Consultar en media/
 
 
 ## Características principales
